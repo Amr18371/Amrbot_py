@@ -16,9 +16,9 @@ from yt_dlp import YoutubeDL
 
 app = Client(
     "Bot",
-    api_id = 1,
- api_hash = "a",
- bot_token = "a"
+    api_id = 22163598,
+ api_hash = "994ff0becda5f784801d3697111c3b70",
+ bot_token = "6147602769:AAHM1UKjCyt6h360D4qCRktUzqgNgpJrMQQ"
 )
 
                                            
