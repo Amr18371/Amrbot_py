@@ -22,7 +22,7 @@ app = Client(
 )
 
                                            
-@app.on_message(filters.command("تحميل فيديو", [".", ""]))
+@app.on_message(filters.command("تحميل فيديو⬇️", [".", ""]))
 async def vsong(client, message):
     ydl_opts = {
         "format": "best",
@@ -48,14 +48,14 @@ async def vsong(client, message):
     except Exception as e:
         print(e)
     try:
-        msg = await message.reply("**جاري تحميل الفيديو ...**")
+        msg = await message.reply("**جاري تحميل الفيديو🔍 ...**")
         with YoutubeDL(ydl_opts) as ytdl:
             ytdl_data = ytdl.extract_info(link, download=True)
             file_name = ytdl.prepare_filename(ytdl_data)
     except Exception as e:
         return await msg.edit(f"🚫 **خطا:** {e}")
     preview = wget.download(thumbnail)
-    await msg.edit("**تاكيد التحميل ...**")
+    await msg.edit("**✅تاكيد التحميل ...**")
     await message.reply_video(
         file_name,
         duration=int(ytdl_data["duration"]),
